@@ -1,0 +1,24 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=903
+
+Fred's Vim Lisp
+
+This plugin allows you to run a Lisp interpreter in a Vim window and send Lisp expressions to it. You can send selected lines, a [count] number of lines, or a range of lines.
+
+fvl.vim defines a handful of commands:
+    LispOpen     opens the lisp window and starts the lisp interpreter
+    LispClose    close the lisp window and terminate lisp. This happens automatically when the lisp buffer is closed.
+    LispRefresh  try and read from lisp when your in a pinch.
+    LispDo       like perldo. Evaluate a lisp expression. You MUST escape quotes.
+    LispCount    evaluate [count] lines.
+    LispRange    evaluate a range of lines.
+
+In practice, all you need to remember is LispDo and possibly LispRange.
+I've added the following mapping to my .vimrc file:
+
+map <C-L> :LispRange
+
+That map allows you to hit <C-L> to send a single line to the lisp interpreter, or select a few lines and send them all together.
+
+
+NOTE: There is already another script that does similar things to fvl.vim, vimscript #221 (VIlisp.vim). What's the difference? Mostly, fvl.vim requires only one file (the plugin file) to work and is a bit easier to setup (imho).
+
